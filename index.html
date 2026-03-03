@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Il Romanticismo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d4a84b;--rose:#c4687a;--blue:#5b8fb9;--green:#6b9e7a;--violet:#8b6bb5;--orange:#c98a4b;--light:#f0ece4;--dim:#a8a0b4;--bg:#1a1520}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:'Source Sans 3',sans-serif;color:var(--light);-webkit-font-smoothing:antialiased}
+.dk{display:flex;height:100%;transition:transform .4s cubic-bezier(.25,.1,.25,1);will-change:transform}
+.sl{width:100vw;min-width:100vw;height:100vh;height:100dvh;padding:48px 22px 72px;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;position:relative}
+.sl::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;z-index:10}
+.T::before{background:var(--gold)}.C::before{background:var(--rose)}.S::before{background:var(--blue)}.L::before{background:var(--green)}.B::before{background:var(--violet)}.H::before{background:var(--orange)}.Q::before{background:var(--rose)}
+.T{background:linear-gradient(160deg,#2a2035,#1a1520 40%,#251c1e);justify-content:center;text-align:center}
+.C{background:linear-gradient(170deg,#2a1e2e,#1a1520)}.S{background:linear-gradient(175deg,#1c2230,#1a1520)}.L{background:linear-gradient(170deg,#1c2a22,#1a1520)}.B{background:linear-gradient(170deg,#221c30,#1a1520)}.H{background:linear-gradient(170deg,#2a2218,#1a1520)}.Q{background:linear-gradient(170deg,#2a1a22,#1a1520)}
+.sn{position:absolute;top:14px;right:18px;font-size:11px;color:var(--dim);font-weight:600;letter-spacing:1px;z-index:5}
+.cl{font-size:10px;text-transform:uppercase;letter-spacing:3px;font-weight:700;margin-bottom:8px;opacity:.7}
+h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;line-height:1.15;color:#fff;margin-bottom:12px}
+h1 em{color:var(--gold);font-style:normal}
+h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.2;color:#fff;margin-bottom:10px}
+h3{font-size:15px;font-weight:700;color:var(--gold);margin:12px 0 5px}
+p,li{font-size:14px;line-height:1.5;margin-bottom:6px}
+.sub{font-size:15px;color:var(--dim);font-weight:300}
+.cb{background:rgba(212,168,75,.08);border-left:3px solid var(--gold);padding:9px 11px;border-radius:0 8px 8px 0;margin:8px 0}
+.cb p{margin-bottom:3px;font-size:13px}.cb .lb{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:4px}
+.bc{background:rgba(139,107,181,.1);border:1px solid rgba(139,107,181,.2);border-radius:11px;padding:11px;margin:7px 0}
+.bc .nm{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff}
+.bc .dt{font-size:12px;color:var(--violet);font-weight:600;margin-bottom:4px}.bc p{font-size:13px;margin-bottom:3px}
+.lc{background:rgba(107,158,122,.1);border:1px solid rgba(107,158,122,.2);border-radius:11px;padding:11px;margin:7px 0}
+.lc .tr{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--green);font-weight:700;margin-bottom:3px}
+.lc .ti{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.lc p{font-size:13px;margin-bottom:3px}
+.kw{display:inline-block;background:rgba(212,168,75,.15);color:var(--gold);padding:2px 7px;border-radius:4px;font-size:12px;font-weight:600;margin:2px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin:5px 0}
+ul{padding-left:15px;margin:4px 0}ul li{font-size:13px;margin-bottom:4px}ul li::marker{color:var(--gold)}
+.dv{width:36px;height:2px;background:var(--gold);margin:10px 0;border-radius:1px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:5px 0}
+.gc{background:rgba(255,255,255,.04);border-radius:9px;padding:9px}.gc h4{font-size:12px;font-weight:700;color:#fff;margin-bottom:2px}.gc p{font-size:11px;margin-bottom:1px}
+.sm{font-size:11px;color:var(--dim)}
+.ic{font-size:26px;margin-bottom:6px;display:block}
+.pb{position:fixed;bottom:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.06);z-index:100}
+.pf{height:100%;background:var(--gold);transition:width .4s ease;border-radius:0 2px 2px 0}
+.nh{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--dim);z-index:100;opacity:.6;pointer-events:none}
+.nb{position:fixed;bottom:20px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--light);font-size:20px;display:flex;align-items:center;justify-content:center;z-index:200;cursor:pointer;transition:background .2s,opacity .2s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.nb:active{background:rgba(212,168,75,.25)}.nb.off{opacity:.2;pointer-events:none}
+#bL{left:20px}#bR{right:20px}
+.sl>*{animation:fu .5s ease both}.sl>*:nth-child(1){animation-delay:.05s}.sl>*:nth-child(2){animation-delay:.1s}.sl>*:nth-child(3){animation-delay:.15s}.sl>*:nth-child(4){animation-delay:.2s}.sl>*:nth-child(5){animation-delay:.25s}.sl>*:nth-child(6){animation-delay:.3s}.sl>*:nth-child(7){animation-delay:.35s}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.qq{font-size:14px;font-weight:700;color:var(--light);margin:10px 0 6px;line-height:1.4}
+.qq i{color:var(--gold);font-style:normal;font-size:13px;margin-right:4px}
+.os{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.op{padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:13px;color:var(--light);cursor:pointer;transition:all .25s;text-align:left;line-height:1.4}
+.op:active{transform:scale(.98)}.op.ok{background:rgba(107,158,122,.2);border-color:var(--green);color:var(--green)}.op.ko{background:rgba(196,104,122,.15);border-color:var(--rose);color:var(--rose)}.op.dis{pointer-events:none;opacity:.5}.op.ok.dis,.op.ko.dis{opacity:1}
+.qs{text-align:center;margin:14px 0;padding:16px;border-radius:12px;background:rgba(212,168,75,.08);border:1px solid rgba(212,168,75,.2)}
+.qs .big{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold)}
+.qs p{font-size:13px;color:var(--dim);margin:4px 0 0}
+.qr{display:inline-block;margin-top:12px;padding:9px 22px;border-radius:8px;background:var(--gold);color:var(--bg);font-size:13px;font-weight:700;cursor:pointer;border:none}
+</style>
+</head>
+<body>
+<div class="dk" id="dk">
+
+<!-- 1 TITOLO -->
+<div class="sl T"><span class="sn">1/35</span>
+<span class="ic">&#127925;</span>
+<h1>Il <em>Romanticismo</em></h1>
+<div class="dv" style="margin:12px auto"></div>
+<p class="sub">Unit&agrave; 8 &mdash; La storia della musica</p>
+<p class="sm" style="margin-top:20px">Scorri o usa le frecce &#8594;</p>
+</div>
+
+<!-- 2 INTRO -->
+<div class="sl C"><span class="sn">2/35</span>
+<div class="cl" style="color:var(--rose)">Introduzione</div>
+<h2>Cos'&egrave; il Romanticismo?</h2>
+<p>Movimento culturale dell'<strong>Ottocento</strong>, nato in <strong>Germania</strong> e <strong>Inghilterra</strong>.</p>
+<div class="cb"><div class="lb">Principi</div>
+<p>Primato del <strong>sentimento</strong> sulla ragione</p>
+<p>Accento su <strong>fantasia</strong> e <strong>immaginazione</strong></p></div>
+<p>In Italia: il <strong>Risorgimento</strong> &#8594; Unit&agrave; d'Italia (<strong>1861</strong>).</p>
+</div>
+
+<!-- 3 GEOGRAFIA -->
+<div class="sl S"><span class="sn">3/35</span>
+<div class="cl" style="color:var(--blue)">Geografia musicale</div>
+<h2>Dove nasce</h2>
+<div class="g2">
+<div class="gc"><h4>&#127465;&#127466; Germania</h4><p>Lied, musica strumentale, riforma di Wagner</p></div>
+<div class="gc"><h4>&#127470;&#127481; Italia</h4><p>Melodramma: Rossini, Bellini, Verdi</p></div>
+<div class="gc"><h4>&#127479;&#127482; Russia</h4><p>Scuola nazionale: Musorgskij, Borodin</p></div>
+<div class="gc"><h4>&#127467;&#127479; Parigi</h4><p>Centro cosmopolita: Chopin, Berlioz</p></div>
+</div></div>
+
+<!-- 4 FORME -->
+<div class="sl S"><span class="sn">4/35</span>
+<div class="cl" style="color:var(--blue)">Forme e generi</div>
+<h2>Le forme musicali</h2>
+<div class="cb"><div class="lb">Lied</div><p><strong>Voce + pianoforte</strong>, testo poetico. Breve durata.</p></div>
+<div class="cb"><div class="lb">Poema sinfonico</div><p><strong>Un solo movimento</strong>, spunto extramusicale.</p></div>
+<div class="cb"><div class="lb">Sinfonia a programma</div><p>Come il poema sinfonico ma in <strong>pi&ugrave; movimenti</strong>.</p></div>
+<div class="cb"><div class="lb">Opera romantica</div><p>Italia (melodramma) + Germania (Wagner).</p></div>
+</div>
+
+<!-- 5 PIANOFORTE -->
+<div class="sl S"><span class="sn">5/35</span>
+<div class="cl" style="color:var(--blue)">Strumento simbolo</div>
+<h2>Il pianoforte romantico</h2>
+<p>Evoluzioni tecniche dall'antico fortepiano:</p>
+<ul>
+<li><strong>Grandi variazioni dinamiche</strong> (dal pianissimo al fortissimo)</li>
+<li><strong>Estensione notevole</strong> (pi&ugrave; tasti)</li>
+<li><strong>Effetti timbrici pi&ugrave; sfumati</strong></li>
+<li><strong>Passaggi virtuosistici</strong> prima impossibili</li>
+</ul>
+<div class="cb"><div class="lb">Fenomeno sociale</div><p>Strumento preferito dalla <strong>borghesia</strong>. Cresce il numero dei <strong>dilettanti</strong>.</p></div>
+</div>
+
+<!-- 6 SCHUBERT -->
+<div class="sl B"><span class="sn">6/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 1 &mdash; Il Lied</div>
+<h2>Schubert, maestro del Lied</h2>
+<div class="bc"><div class="nm">Franz Schubert</div><div class="dt">Vienna, 1797 &ndash; 1828</div>
+<p>Pi&ugrave; di <strong>600 Lieder</strong>, sonate e sinfonie. Origini umili, maestro di scuola.</p></div>
+<div class="lc"><div class="tr">Ascolto &mdash; tr. 02</div><div class="ti">St&auml;ndchen (Serenata)</div>
+<p>Serenata notturna. Forma <strong>ABABC</strong> (5 strofe). Il pianoforte introduce, echeggia e chiude con coda in <strong>diminuendo</strong>.</p>
+<p>Raccolta: <em>Schwanengesang</em> (Canto del cigno), 1828.</p></div>
+</div>
+
+<!-- 7 SCHUMANN -->
+<div class="sl B"><span class="sn">7/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 2 &mdash; Il pianoforte romantico</div>
+<h2>Schumann, animo romantico</h2>
+<div class="bc"><div class="nm">Robert Schumann</div><div class="dt">Zwickau, 1810 &ndash; Bonn, 1856</div>
+<p><strong>Infortunio alla mano sinistra</strong>. Figlio di libraio. Scelse la musica dopo un concerto di <strong>Paganini</strong>.</p></div>
+<div class="lc"><div class="tr">Ascolto &mdash; tr. 03</div><div class="ti">Carnaval: Eusebio &ndash; Florestano</div>
+<p><strong>Eusebio</strong> = riflessivo, intimo, lento, piano</p>
+<p><strong>Florestano</strong> = focoso, appassionato, vivace, forte</p></div>
+</div>
+
+<!-- 8 CHOPIN -->
+<div class="sl B"><span class="sn">8/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 3 &mdash; Chopin</div>
+<h2>Chopin, poeta del pianoforte</h2>
+<div class="bc"><div class="nm">Fryderyk Chopin</div><div class="dt">Zelazowa Wola, 1810 &ndash; Parigi, 1849</div>
+<p>Bambino prodigio. A 21 anni a <strong>Parigi</strong>. Compose quasi solo per pianoforte.</p></div>
+<div class="tags"><span class="kw">studi</span><span class="kw">preludi</span><span class="kw">valzer</span><span class="kw">notturni</span><span class="kw">mazurke</span><span class="kw">polacche</span><span class="kw">ballate</span></div>
+<h3>Danze popolari reinventate</h3>
+<p><strong>Mazurka</strong> e <strong>polacca</strong>: danze rustiche slave in pezzi pianistici eleganti. Tempo 3/4, accento sul 2&deg; o 3&deg; movimento.</p>
+</div>
+
+<!-- 9 NOTTURNO -->
+<div class="sl L"><span class="sn">9/35</span>
+<div class="cl" style="color:var(--green)">Cap. 3 &mdash; Ascolto</div>
+<h2>Il notturno romantico</h2>
+<div class="cb"><div class="lb">Definizione</div><p>Senza forma prestabilita. <strong>Bellezza della melodia</strong>. Tempo lento, carattere <strong>intimo e sentimentale</strong>.</p></div>
+<div class="lc"><div class="tr">tr. 04</div><div class="ti">Notturno op. 9 n. 2 in Mi&#9837; magg.</div>
+<p>Melodia lunga con varianti. <strong>Andante</strong> in 12/8.</p>
+<p>Tecnica del <strong>rubato</strong>: tempo flessibile.</p>
+<p>Dinamica: <strong>pp &#8594; f dolce &#8594; pp</strong></p>
+<p>Chiude con cadenza all'acuto e diminuendo.</p></div>
+<p class="sm">Il cuore di Chopin &egrave; conservato a Varsavia (Chiesa della Santa Croce).</p>
+</div>
+
+<!-- 10 BERLIOZ -->
+<div class="sl B"><span class="sn">10/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 4 &mdash; Poemi sinfonici</div>
+<h2>Berlioz e la Sinfonia fantastica</h2>
+<div class="bc"><div class="nm">Hector Berlioz</div><div class="dt">1803 &ndash; Parigi, 1869</div>
+<p>Avviato alla medicina, scelse la musica. Famoso per il <strong>gigantismo orchestrale</strong>.</p></div>
+<div class="cb"><div class="lb">Identit&agrave; fra arte e vita</div><p>La <em>Symphonie fantastique</em> racconta la sua passione per l'attrice <strong>Harriet Smithson</strong>.</p></div>
+<div class="cb"><div class="lb">Idea fissa</div><p>Motivo ricorrente in tutti i <strong>5 movimenti</strong> che rappresenta la donna amata.</p></div>
+</div>
+
+<!-- 11 UN BALLO -->
+<div class="sl L"><span class="sn">11/35</span>
+<div class="cl" style="color:var(--green)">Cap. 4 &mdash; Ascolto</div>
+<h2>Sinfonia fantastica: Un ballo</h2>
+<div class="lc"><div class="tr">tr. 05 &mdash; II mov.</div><div class="ti">Un ballo (Un bal)</div>
+<p>Tempo di <strong>valzer</strong> (3/4 o 3/8)</p>
+<p>Intro: <strong>tremolo archi + arpa</strong></p>
+<p><strong>Idea fissa</strong> al flauto e oboe (2:10)</p>
+<p>Crescendo &#8594; <strong>accelerando</strong> (4:32)</p>
+<p>Conclusione: <strong>cadenza in forte</strong></p></div>
+</div>
+
+<!-- 12 SMETANA -->
+<div class="sl B"><span class="sn">12/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 4 &mdash; Tradizioni popolari</div>
+<h2>Smetana e La Moldava</h2>
+<div class="bc"><div class="nm">Bed&#345;ich Smetana</div><div class="dt">1824 &ndash; Praga, 1884</div>
+<p>Tradizioni popolari boeme. <strong>6 poemi sinfonici</strong>: <em>La mia patria</em> (1874-79).</p></div>
+<div class="lc"><div class="tr">tr. 07</div><div class="ti">La Moldava</div>
+<p>6/8. <strong>Due flauti</strong> = sorgenti. Tema <strong>modo minore</strong> ai violini (= Ballo di Mantova = inno di Israele). <strong>Trombe e corni</strong> = caccia.</p></div>
+</div>
+
+<!-- 13 BRAHMS -->
+<div class="sl B"><span class="sn">13/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 4 &mdash; Tradizione classica</div>
+<h2>Brahms e la tradizione</h2>
+<div class="bc"><div class="nm">Johannes Brahms</div><div class="dt">Amburgo, 1833 &ndash; Vienna, 1897</div>
+<p>Allievo di Schumann. Eredit&agrave; della <strong>tradizione classico-romantica</strong> tedesca.</p></div>
+<div class="lc"><div class="tr">tr. 08</div><div class="ti">Sinfonia n. 3, III mov.</div>
+<p><strong>ABA'</strong>, modo minore, <strong>intimo e malinconico</strong>. Pizzicato finale.</p></div>
+<p class="sm"><strong>Sonata F.A.E.:</strong> F.A.E. = Frei aber Einsam (Libero ma solo) = note Fa, La, Mi.</p>
+</div>
+
+<!-- 14 OPERA -->
+<div class="sl C"><span class="sn">14/35</span>
+<div class="cl" style="color:var(--rose)">Cap. 5 &mdash; L'opera italiana</div>
+<h2>L'opera romantica italiana</h2>
+<div class="cb"><div class="lb">Cambiamenti</div><p>Addio genere comico. <strong>Finali tragici</strong>: passione, vendetta, odio.</p></div>
+<p><strong>Pubblico borghese</strong>. Vicende da Schiller, Walter Scott, Victor Hugo, Dumas figlio.</p>
+<div class="cb"><div class="lb">Novit&agrave; formale</div><p>Superate arie/recitativi. <strong>Discorso musicale pi&ugrave; libero</strong>. Valorizzati <strong>coro</strong> e <strong>orchestra</strong>.</p></div>
+<p class="sm"><strong>Teatro Politeama di Palermo (1874):</strong> 5.000 posti, oggi Orchestra Sinfonica Siciliana.</p>
+</div>
+
+<!-- 15 ROSSINI -->
+<div class="sl B"><span class="sn">15/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 6 &mdash; Rossini</div>
+<h2>Rossini, il genio comico</h2>
+<div class="bc"><div class="nm">Gioachino Rossini</div><div class="dt">Pesaro, 1792 &ndash; Parigi, 1868</div>
+<p>Ultimo grande del <strong>genere comico</strong>. ~40 opere.</p></div>
+<h3>Il Barbiere di Siviglia</h3>
+<p>Orchestra a <strong>folli velocit&agrave;</strong>, <strong>virtuosismi acrobatici</strong>, concertati = <strong>&laquo;follia organizzata&raquo;</strong>.</p>
+<div class="cb"><div class="lb">Crescendo rossiniano</div><p>Ripetizione ossessiva, <strong>sempre pi&ugrave; forte</strong>, con <strong>aggiunta di strumenti</strong>.</p></div>
+</div>
+
+<!-- 16 BELLINI -->
+<div class="sl B"><span class="sn">16/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 7 &mdash; Bellini</div>
+<h2>Bellini e il belcanto</h2>
+<div class="bc"><div class="nm">Vincenzo Bellini</div><div class="dt">Catania, 1801 &ndash; Parigi, 1835</div>
+<p>Coniuga classico e romantico. <strong>Bellezza delle melodie</strong>.</p></div>
+<h3>Norma (alla Scala)</h3>
+<p>Sacerdotessa Norma e il proconsole Pollione. Passione infelice &#8594; rogo.</p>
+<div class="g2"><div class="gc"><h4>Cavatina</h4><p>Prima aria del protagonista</p></div><div class="gc"><h4>Belcanto</h4><p>Canto fiorito, colorature (melismi)</p></div></div>
+<p class="sm"><strong>Casta Diva (tr. 10):</strong> archi + flauto, coro druidi, melismi all'acuto, pianissimo finale.</p>
+</div>
+
+<!-- 17 VERDI INTRO -->
+<div class="sl C"><span class="sn">17/35</span>
+<div class="cl" style="color:var(--rose)">Cap. 8 &mdash; Verdi</div>
+<h2>Giuseppe Verdi</h2>
+<div class="bc"><div class="nm">Giuseppe Verdi</div><div class="dt">Roncole di Busseto, 1813 &ndash; Milano, 1901</div>
+<p>Famiglia umile. Aiutato da <strong>Antonio Barezzi</strong>. Respinto dal Conservatorio. Perse moglie e figli. <strong>Carattere fortissimo</strong>.</p></div>
+<p>Musica <strong>potente e vigorosa</strong>. Valorizza <strong>coro</strong> e <strong>orchestra</strong>.</p>
+</div>
+
+<!-- 18 VERDI OPERE -->
+<div class="sl S"><span class="sn">18/35</span>
+<div class="cl" style="color:var(--blue)">Cap. 8 &mdash; Le opere</div>
+<h2>Le tappe di Verdi</h2>
+<ul>
+<li><strong>1842 &ndash; Nabucco</strong> (alla Scala) &#8594; primo trionfo</li>
+<li><strong>1847 &ndash; Macbeth</strong> (da Shakespeare)</li>
+<li><strong>1851 &ndash; Rigoletto</strong> (da Victor Hugo)</li>
+<li><strong>1853 &ndash; Il Trovatore</strong></li>
+<li><strong>1853 &ndash; La Traviata</strong> (da Dumas figlio)</li>
+<li><strong>1871 &ndash; Aida</strong> &#8594; teatro del Cairo</li>
+<li><strong>1874 &ndash; Messa da Requiem</strong> &#8594; morte di Manzoni</li>
+<li><strong>Otello e Falstaff</strong> (Shakespeare) &#8594; influenza Wagner</li>
+</ul></div>
+
+<!-- 19 VERDI ASCOLTI -->
+<div class="sl L"><span class="sn">19/35</span>
+<div class="cl" style="color:var(--green)">Cap. 8 &mdash; Ascolti</div>
+<h2>Ascolti verdiani</h2>
+<div class="lc"><div class="tr">tr. 11</div><div class="ti">Macbeth: Scena delle apparizioni</div>
+<p>Scozia gotica. Tromboni, grancassa, timpani. Tre spiriti: <strong>poche note ripetute e scandite</strong>.</p></div>
+<div class="lc"><div class="tr">tr. 12</div><div class="ti">La Traviata: Scena del brindisi</div>
+<p><strong>Valzer</strong> 3/8. <strong>Attacco in levare</strong>. Alfredo canta primo in pp, Violetta riprende, tutti in forte.</p></div>
+</div>
+
+<!-- 20 PATRIOTTISMO -->
+<div class="sl H"><span class="sn">20/35</span>
+<div class="cl" style="color:var(--orange)">Musica e Storia</div>
+<h2>Verdi e il patriottismo</h2>
+<div class="cb"><div class="lb">Va' pensiero (Nabucco, 1842)</div>
+<p>Ebrei a Babilonia. <strong>Stessa melodia</strong> = unit&agrave; del popolo. <strong>Simbolo di libert&agrave;</strong>.</p></div>
+<div class="cb"><div class="lb">&laquo;Viva V.E.R.D.I.!&raquo; (1859)</div>
+<p><strong>V</strong>ittorio <strong>E</strong>manuele <strong>R</strong>e <strong>D</strong>'<strong>I</strong>talia.</p></div>
+</div>
+
+<!-- 21 FRATELLI D'ITALIA -->
+<div class="sl H"><span class="sn">21/35</span>
+<div class="cl" style="color:var(--orange)">Musica e Storia</div>
+<h2>Fratelli d'Italia</h2>
+<p>Testo: <strong>Goffredo Mameli</strong> (1827-1849).</p>
+<p>Musica: <strong>Michele Novaro</strong> (1818-1885).</p>
+<p>Scritto <strong>1847</strong>. Inno dal <strong>1946</strong>.</p>
+<div class="cb"><div class="lb">Caratteristiche</div>
+<p><strong>Brillante</strong>, <strong>ritmo puntato</strong>, melodia <strong>sillabica</strong>, frasi brevi. Per tutti.</p></div>
+</div>
+
+<!-- 22 WAGNER -->
+<div class="sl C"><span class="sn">22/35</span>
+<div class="cl" style="color:var(--rose)">Cap. 9 &mdash; Wagner</div>
+<h2>Wagner</h2>
+<div class="bc"><div class="nm">Richard Wagner</div><div class="dt">Lipsia, 1813 &ndash; Venezia, 1883</div>
+<p>Il pi&ugrave; importante per opera tedesca. Esiliato in Svizzera (moti 1848).</p></div>
+<p><em>Lohengrin, Tristano e Isotta, Anello del Nibelungo, Parsifal</em>.</p>
+<p><strong>Ludwig II di Baviera</strong> &#8594; teatro di <strong>Bayreuth</strong> (1876).</p>
+</div>
+
+<!-- 23 WAGNER CONCETTI -->
+<div class="sl S"><span class="sn">23/35</span>
+<div class="cl" style="color:var(--blue)">Cap. 9 &mdash; Concetti chiave</div>
+<h2>La rivoluzione wagneriana</h2>
+<div class="cb"><div class="lb">Opera d'arte totale</div><p><strong>Parola + musica + azione</strong>. Wagner scrive tutti i libretti.</p></div>
+<div class="cb"><div class="lb">Melodia infinita</div><p>Flusso <strong>ininterrotto</strong>. Abolisce arie e recitativi.</p></div>
+<div class="cb"><div class="lb">Leitmotiven (motivi conduttori)</div><p>Temi = <strong>personaggi, situazioni, oggetti, sentimenti</strong>. Eseguiti dall'orchestra.</p></div>
+</div>
+
+<!-- 24 TETRALOGIA -->
+<div class="sl S"><span class="sn">24/35</span>
+<div class="cl" style="color:var(--blue)">Cap. 9 &mdash; Tetralogia</div>
+<h2>L'anello del Nibelungo</h2>
+<p><strong>4 drammi musicali</strong> su leggende nordiche:</p>
+<ul>
+<li><strong>Prologo:</strong> L'oro del Reno</li>
+<li><strong>1&ordf; giornata:</strong> La Valchiria</li>
+<li><strong>2&ordf; giornata:</strong> Sigfrido</li>
+<li><strong>3&ordf; giornata:</strong> Il crepuscolo degli d&egrave;i</li>
+</ul>
+<div class="cb"><div class="lb">Tema</div><p>Lotta per <strong>potere</strong> e <strong>denaro</strong>. Rovina degli d&egrave;i &#8594; nuovi eroi.</p></div>
+</div>
+
+<!-- 25 CAVALCATA -->
+<div class="sl L"><span class="sn">25/35</span>
+<div class="cl" style="color:var(--green)">Cap. 9 &mdash; Ascolto</div>
+<h2>Cavalcata delle Valchirie</h2>
+<div class="lc"><div class="tr">tr. 15</div><div class="ti">La Valchiria &ndash; Cavalcata</div>
+<p>Br&uuml;nhilde e guerriere &#8594; eroi al <strong>Walhalla</strong>.</p>
+<p><strong>Fortissimo ottoni</strong> (corni, trombe, tromboni). Motivo in <strong>9/8</strong>.</p>
+<p>Archi e legni: <strong>scale rapidissime, tremoli</strong>.</p>
+<p>Grido: <strong>&laquo;Hojotoho! Heiaha!&raquo;</strong></p></div>
+</div>
+
+<!-- 26 RUSSIA -->
+<div class="sl C"><span class="sn">26/35</span>
+<div class="cl" style="color:var(--rose)">Cap. 10 &mdash; Russia</div>
+<h2>Romanticismo russo</h2>
+<p><strong>Folklore musicale</strong> per superare opera italiana e sinfonismo austro-tedesco.</p>
+<div class="bc"><div class="nm">Alexander Borodin</div><div class="dt">San Pietroburgo, 1833 &ndash; 1887</div>
+<p>Chimico, <strong>&laquo;musicista della domenica&raquo;</strong>. <em>Il principe Igor</em> (completata da Rimskij-Korsakov). <em>Danze polovesiane</em>.</p></div>
+<p class="sm"><strong>Tr. 16:</strong> Danza fanciulle &ndash; soprani + oboe, arpa, archi pizzicato.</p>
+</div>
+
+<!-- 27 MUSORGSKIJ -->
+<div class="sl B"><span class="sn">27/35</span>
+<div class="cl" style="color:var(--violet)">Cap. 10 &mdash; Musorgskij</div>
+<h2>Quadri di un'esposizione</h2>
+<div class="bc"><div class="nm">Modest Musorgskij</div><div class="dt">Karevo, 1839 &ndash; San Pietroburgo, 1881</div>
+<p>Il <strong>pi&ugrave; originale</strong> della scuola russa. Suite per pianoforte (1874) dai disegni di <strong>Viktor Hartmann</strong>. Orchestrata da <strong>Ravel</strong> (1922).</p></div>
+</div>
+
+<!-- 28 QUADRI ASCOLTI -->
+<div class="sl L"><span class="sn">28/35</span>
+<div class="cl" style="color:var(--green)">Cap. 10 &mdash; Ascolti</div>
+<h2>Quadri: 3 brani</h2>
+<div class="lc"><div class="tr">tr. 17</div><div class="ti">Passeggiata</div>
+<p>Melodia <strong>pentatonica</strong> (canti russi). Tromba, poi ottoni.</p></div>
+<div class="lc"><div class="tr">tr. 18</div><div class="ti">Baba-Yaga (La capanna)</div>
+<p>ABA. Timpani, grancassa, trombe. Sez. B: contrabbassi pizzicato, celesta, xilofono, tuba. Crescendo.</p></div>
+<div class="lc"><div class="tr">tr. 19</div><div class="ti">Balletto dei pulcini</div>
+<p><strong>Onomatopeico</strong>, ABA. Note staccate, acciaccature, legni e piatti.</p></div>
+</div>
+
+<!-- 29 RIEPILOGO -->
+<div class="sl S"><span class="sn">29/35</span>
+<div class="cl" style="color:var(--blue)">Riepilogo</div>
+<h2>Mappa del Romanticismo</h2>
+<div class="g2">
+<div class="gc" style="border-left:3px solid var(--gold)"><h4>&#127929; Pianoforte</h4><p>Schubert, Schumann, Chopin</p></div>
+<div class="gc" style="border-left:3px solid var(--blue)"><h4>&#127931; Sinfonia</h4><p>Berlioz, Smetana, Brahms</p></div>
+<div class="gc" style="border-left:3px solid var(--rose)"><h4>&#127917; Opera</h4><p>Rossini, Bellini, Verdi</p></div>
+<div class="gc" style="border-left:3px solid var(--violet)"><h4>&#127926; Wagner</h4><p>Opera d'arte totale</p></div>
+<div class="gc" style="border-left:3px solid var(--green)"><h4>&#127479;&#127482; Russia</h4><p>Borodin, Musorgskij</p></div>
+<div class="gc" style="border-left:3px solid var(--orange)"><h4>&#127470;&#127481; Risorgimento</h4><p>Va' pensiero, Fratelli d'Italia</p></div>
+</div></div>
+
+<!-- 30 VOCABOLARIO -->
+<div class="sl T"><span class="sn">30/35</span>
+<span class="ic">&#128214;</span>
+<h1>Vocabolario <em>essenziale</em></h1>
+<div style="text-align:left;max-width:320px;margin:0 auto">
+<p><strong>Lied</strong> &ndash; voce + pianoforte su testo poetico</p>
+<p><strong>Idea fissa</strong> &ndash; motivo ricorrente (Berlioz)</p>
+<p><strong>Leitmotiv</strong> &ndash; motivo conduttore (Wagner)</p>
+<p><strong>Melodia infinita</strong> &ndash; flusso ininterrotto</p>
+<p><strong>Belcanto</strong> &ndash; canto fiorito e raffinato</p>
+<p><strong>Cavatina</strong> &ndash; prima aria del protagonista</p>
+<p><strong>Crescendo rossiniano</strong> &ndash; ripetizione crescente</p>
+<p><strong>Rubato</strong> &ndash; tempo flessibile</p>
+<p><strong>Concertato</strong> &ndash; brano d'insieme</p>
+</div></div>
+
+<!-- ============ TEST ============ -->
+
+<!-- 31 TEST P1 -->
+<div class="sl Q"><span class="sn">31/35</span>
+<div class="cl" style="color:var(--rose)">Test &mdash; Parte 1</div>
+<h2>Mettiti alla prova!</h2>
+<div class="qq"><i>1.</i> Qual &egrave; il principio fondamentale del Romanticismo?</div>
+<div class="os"><div class="op" data-v="0">a) Il primato della ragione</div><div class="op" data-v="1">b) Il primato del sentimento</div><div class="op" data-v="0">c) Il primato della tecnica</div></div>
+<div class="qq"><i>2.</i> Quanti Lieder ha composto Schubert?</div>
+<div class="os"><div class="op" data-v="0">a) Circa 200</div><div class="op" data-v="1">b) Pi&ugrave; di 600</div><div class="op" data-v="0">c) Circa 50</div></div>
+<div class="qq"><i>3.</i> Il poema sinfonico &egrave; articolato in:</div>
+<div class="os"><div class="op" data-v="1">a) Un solo movimento</div><div class="op" data-v="0">b) Tre movimenti</div><div class="op" data-v="0">c) Cinque movimenti</div></div>
+<div class="qq"><i>4.</i> Eusebio e Florestano sono personaggi di:</div>
+<div class="os"><div class="op" data-v="0">a) Chopin</div><div class="op" data-v="1">b) Schumann</div><div class="op" data-v="0">c) Schubert</div></div>
+</div>
+
+<!-- 32 TEST P2 -->
+<div class="sl Q"><span class="sn">32/35</span>
+<div class="cl" style="color:var(--rose)">Test &mdash; Parte 2</div>
+<h2>Chopin, Berlioz, Smetana, Brahms</h2>
+<div class="qq"><i>5.</i> La tecnica del rubato consiste nel:</div>
+<div class="os"><div class="op" data-v="0">a) Suonare sempre forte</div><div class="op" data-v="0">b) Suonare in modo staccato</div><div class="op" data-v="1">c) Non scandire il tempo rigidamente</div></div>
+<div class="qq"><i>6.</i> L'idea fissa nella Sinfonia fantastica rappresenta:</div>
+<div class="os"><div class="op" data-v="0">a) Un paesaggio</div><div class="op" data-v="1">b) La donna amata (Harriet Smithson)</div><div class="op" data-v="0">c) La morte</div></div>
+<div class="qq"><i>7.</i> I due flauti all'inizio de La Moldava evocano:</div>
+<div class="os"><div class="op" data-v="1">a) Le sorgenti del fiume</div><div class="op" data-v="0">b) Una tempesta</div><div class="op" data-v="0">c) Il canto degli uccelli</div></div>
+<div class="qq"><i>8.</i> F.A.E. nella sonata di Brahms significa:</div>
+<div class="os"><div class="op" data-v="0">a) Forte e Allegro</div><div class="op" data-v="1">b) Frei aber Einsam (Libero ma solo)</div><div class="op" data-v="0">c) Fantasia e Armonia Espressiva</div></div>
+</div>
+
+<!-- 33 TEST P3 -->
+<div class="sl Q"><span class="sn">33/35</span>
+<div class="cl" style="color:var(--rose)">Test &mdash; Parte 3</div>
+<h2>Opera italiana e Verdi</h2>
+<div class="qq"><i>9.</i> Il crescendo rossiniano consiste in:</div>
+<div class="os"><div class="op" data-v="0">a) Un rallentando progressivo</div><div class="op" data-v="1">b) Ripetizione di una frase sempre pi&ugrave; forte con aggiunta di strumenti</div><div class="op" data-v="0">c) Un assolo di violino crescente</div></div>
+<div class="qq"><i>10.</i> Casta Diva &egrave; un'aria tratta da:</div>
+<div class="os"><div class="op" data-v="0">a) La Traviata di Verdi</div><div class="op" data-v="1">b) Norma di Bellini</div><div class="op" data-v="0">c) Il Barbiere di Siviglia</div></div>
+<div class="qq"><i>11.</i> Il primo grande trionfo di Verdi fu:</div>
+<div class="os"><div class="op" data-v="1">a) Nabucco, alla Scala, 1842</div><div class="op" data-v="0">b) Aida, al Cairo, 1871</div><div class="op" data-v="0">c) Rigoletto, 1851</div></div>
+<div class="qq"><i>12.</i> &laquo;Viva V.E.R.D.I.!&raquo; significava:</div>
+<div class="os"><div class="op" data-v="1">a) Vittorio Emanuele Re D'Italia</div><div class="op" data-v="0">b) Viva la Voce E il Ritmo Dell'Italia</div><div class="op" data-v="0">c) Era solo un omaggio al compositore</div></div>
+</div>
+
+<!-- 34 TEST P4 -->
+<div class="sl Q"><span class="sn">34/35</span>
+<div class="cl" style="color:var(--rose)">Test &mdash; Parte 4</div>
+<h2>Wagner e Russia</h2>
+<div class="qq"><i>13.</i> I Leitmotiven di Wagner sono:</div>
+<div class="os"><div class="op" data-v="0">a) Danze popolari tedesche</div><div class="op" data-v="1">b) Temi musicali che identificano personaggi o situazioni</div><div class="op" data-v="0">c) Forme di canto corale</div></div>
+<div class="qq"><i>14.</i> La Tetralogia di Wagner comprende:</div>
+<div class="os"><div class="op" data-v="0">a) 3 opere</div><div class="op" data-v="1">b) 4 drammi musicali (prologo + 3 giornate)</div><div class="op" data-v="0">c) 5 sinfonie</div></div>
+<div class="qq"><i>15.</i> Borodin si definiva:</div>
+<div class="os"><div class="op" data-v="1">a) Musicista della domenica</div><div class="op" data-v="0">b) Compositore per caso</div><div class="op" data-v="0">c) Dilettante geniale</div></div>
+<div class="qq"><i>16.</i> I Quadri di Musorgskij sono ispirati a:</div>
+<div class="os"><div class="op" data-v="0">a) Poesie di Pushkin</div><div class="op" data-v="1">b) Disegni e acquerelli di Viktor Hartmann</div><div class="op" data-v="0">c) Paesaggi della Siberia</div></div>
+</div>
+
+<!-- 35 RISULTATO -->
+<div class="sl T"><span class="sn">35/35</span>
+<span class="ic">&#127942;</span>
+<h2>Il tuo risultato</h2>
+<div class="qs"><div class="big" id="sN">&ndash; / 16</div><p id="sM">Rispondi a tutte le domande</p></div>
+<button class="qr" id="resetBtn">Ricomincia il test</button>
+</div>
+
+</div><!-- /dk -->
+
+<div class="nb off" id="bL">&#9664;</div>
+<div class="nb" id="bR">&#9654;</div>
+<div class="pb"><div class="pf" id="pg"></div></div>
+<div class="nh" id="nh">1 / 35</div>
+
+<script>
+var dk=document.getElementById('dk'),pg=document.getElementById('pg'),nh=document.getElementById('nh'),
+bL=document.getElementById('bL'),bR=document.getElementById('bR'),
+ss=document.querySelectorAll('.sl'),tot=ss.length,cur=0,sx=0,dr=false,dx=0;
+
+function go(n){
+cur=Math.max(0,Math.min(n,tot-1));
+dk.style.transform='translateX(-'+cur*100+'vw)';
+pg.style.width=((cur+1)/tot*100)+'%';
+nh.textContent=(cur+1)+' / '+tot;
+bL.className=cur===0?'nb off':'nb';
+bR.className=cur===tot-1?'nb off':'nb';
+}
+
+bL.addEventListener('click',function(e){e.stopPropagation();go(cur-1);});
+bR.addEventListener('click',function(e){e.stopPropagation();go(cur+1);});
+
+dk.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dr=true;dk.style.transition='none';},{passive:true});
+dk.addEventListener('touchmove',function(e){if(!dr)return;dx=e.touches[0].clientX-sx;dk.style.transform='translateX('+(-(cur*window.innerWidth)+dx)+'px)';},{passive:true});
+dk.addEventListener('touchend',function(){dr=false;dk.style.transition='transform .4s cubic-bezier(.25,.1,.25,1)';if(Math.abs(dx)>50){if(dx<0)go(cur+1);else go(cur-1);}else go(cur);dx=0;});
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' ')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);});
+
+// Quiz
+var sc=0,ans=0,tQ=16;
+document.querySelectorAll('.os').forEach(function(g){
+var ops=g.querySelectorAll('.op');
+ops.forEach(function(o){
+o.addEventListener('click',function(){
+if(g.classList.contains('dn'))return;
+g.classList.add('dn');ans++;
+if(o.getAttribute('data-v')==='1'){sc++;o.classList.add('ok');}
+else{o.classList.add('ko');ops.forEach(function(x){if(x.getAttribute('data-v')==='1')x.classList.add('ok');});}
+ops.forEach(function(x){x.classList.add('dis');});
+upd();
+});});});
+
+function upd(){
+var e=document.getElementById('sN'),m=document.getElementById('sM');
+if(e)e.textContent=sc+' / '+tQ;
+if(m){
+if(ans<tQ)m.textContent='Hai risposto a '+ans+' su '+tQ;
+else if(sc>=14)m.textContent='Eccellente! Ottima preparazione!';
+else if(sc>=10)m.textContent='Buono! Ripassa i punti mancanti.';
+else m.textContent='Rileggi le slide e riprova!';
+}}
+
+document.getElementById('resetBtn').addEventListener('click',function(){
+sc=0;ans=0;
+document.querySelectorAll('.os').forEach(function(g){
+g.classList.remove('dn');
+g.querySelectorAll('.op').forEach(function(o){o.classList.remove('ok','ko','dis');});
+});
+document.getElementById('sN').textContent='- / 16';
+document.getElementById('sM').textContent='Rispondi a tutte le domande';
+go(30);
+});
+
+go(0);
+</script>
+</body>
+</html>
